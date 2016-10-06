@@ -21,28 +21,52 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
 <!-- wrapper -->
 <div class="wrapper">
   <header role="banner">
-    <div class="inner">
+    <div class="container">
+      <div class="row">
 
-      <div class="logo">
-        <?php if ( is_front_page() && is_home() ){ } else { ?>
-          <a href="<?php echo home_url(); ?>">
-            <?php  } ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
-            <?php if ( is_front_page() && is_home() ){
-            } else { ?>
-          </a>
-        <?php } ?>
-      </div><!-- /logo -->
+        <div class="logo">
+          <a href="/">АЛЬФА-ЧИСТКА</a>
+          <p class="tel">(495)644-58-85</p>
+          <p class="adr">г. Москва, ул. Воронцовская, д 4, стр. 3</p>
+        </div><!-- /logo -->
+        <div class="head-baner">
+          <img src="<?php echo get_template_directory_uri(); ?>/img/head-slide.jpg" alt="">
+        </div>
+        <div class="header-nav-menu col-md-12">
+<nav class="nav__header" role="navigation">
+            <?php wpeHeadNav(); ?>
+  <!--
 
-      <nav class="nav" role="navigation">
-        <?php wpeHeadNav(); ?>
-      </nav><!-- /nav -->
+            <ul class="headnav">
+              <li><a href="#">О НАС</a></li>
+              <li><a href="#">КОНТАКТЫ</a></li>
+              <li><a href="#">ОТЗЫВЫ</a></li>
+              <li><a href="#">ЦЕНЫ</a></li>
+              <li><a href="#">АКЦИИ</a></li>
+            </ul>
+          -->
+          </nav><!-- /nav -->
+          <div class="conect">
+            <a href="#openModal">ОНЛАЙН ЗАКАЗ</a>
 
-    </div><!-- /.inner -->
+            <div id="openModal" class="modalDialog">
+              <div>
+                <a href="#close" title="Закрыть" id="mod-close" class="close"></a>
+                <h2>Модальное окно</h2>
+                <p>Пример простого модального окна, которое может быть создано с использованием CSS3.</p>
+                <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /.header-nav-menu -->
+      </div><!-- /.row -->
+    </div><!-- /.container -->
   </header><!-- /header -->
+
 
   <section role="main">
     <div class="inner">

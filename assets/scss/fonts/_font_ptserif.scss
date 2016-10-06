@@ -1,0 +1,60 @@
+$rb-font-path: '../fonts' !default;
+
+
+@font-face {
+  font-family: 'PTSerif';
+  font-weight: 400;
+  font-style: normal;
+
+  src: url("#{$rb-font-path}/PTSerifRegular.eot");
+  src: local('PTSerif Regular'),
+  local('PTSerifRegular'),
+
+  url("#{$rb-font-path}/PTSerifRegular.eot?#iefix")format("embedded-opentype"),
+  url("#{$rb-font-path}/PTSerifRegular.woff") format("woff"),
+  url("#{$rb-font-path}/PTSerifRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'PTSerif';
+  font-weight: 700;
+  font-style: normal;
+
+  src: url("#{$rb-font-path}/PTSerifBold.eot");
+  src: local('PTSerif Regular'),
+  local('PTSerifBold'),
+
+  url("#{$rb-font-path}/PTSerifBold.eot?#iefix")format("embedded-opentype"),
+  url("#{$rb-font-path}/PTSerifBold.woff") format("woff"),
+  url("#{$rb-font-path}/PTSerifBold.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: 'PTSerif';
+  font-weight: 400;
+  font-style: italic;
+
+  src: url("#{$rb-font-path}/PTSerifItalic.eot");
+  src: local('PTSerif Italic'),
+  local('PTSerifItalic'),
+
+  url("#{$rb-font-path}/PTSerifItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$rb-font-path}/PTSerifItalic.woff") format("woff"),
+  url("#{$rb-font-path}/PTSerifItalic.ttf") format("truetype");
+
+}
+
+@font-face {
+  font-family: 'PTSerif';
+  font-weight: 700;
+  font-style: italic;
+
+  src: url("#{$rb-font-path}/PTSerifBoldItalic.eot");
+  src: local('PTSerif Bold Italic'),
+  local('PTSerifBoldItalic'),
+
+  url("#{$rb-font-path}/PTSerifBoldItalic.eot?#iefix")format("embedded-opentype"),
+  url("#{$rb-font-path}/PTSerifBoldItalic.woff") format("woff"),
+  url("#{$rb-font-path}/PTSerifBoldItalic.ttf") format("truetype");
+}
