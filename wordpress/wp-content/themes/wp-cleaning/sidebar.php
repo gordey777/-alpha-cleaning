@@ -18,33 +18,36 @@
           <div class="reviews-side">
             <h5 class="blue-after">отзывы о нас</h5>
             <ul>
+
               <?php
-              $args = array(
-              'number' => 3,
-              'orderby' => 'comment_date',
-              'order' => 'DESC',
-              //'post_id' => 0,
-              'type' => 'comment', // только комментарии, без пингов и т.д...
-            );
+                $args = array(
+                'number' => 3,
+                'orderby' => 'comment_date',
+                'order' => 'DESC',
+                //'post_id' => 0,
+                'type' => 'comment',
+              );
 
-            if( $comments = get_comments( $args ) ){
+              if( $comments = get_comments( $args ) ){
 
-              foreach( $comments as $comment ){
-                //$adress = get_comment_meta(get_comment_ID(), 'adress', true);
-                $adress = get_comment_meta(get_comment_ID(), 'adress', true);
-                $comm_short_txt = mb_substr( strip_tags( $comment->comment_content ), 0, 200 ) .'...';
+                foreach( $comments as $comment ){
 
-                echo
-                '<li>'.
-                '<p class="rev-name">'.
-                $comment->comment_author
-                .'</p>'.
-                '<p class="rev-adres">'.$adress.'</p>'
-                .'<p class="rev-cont">'.$comm_short_txt.'</p>'.
-                '</li>';
-              }
+                  $adress = get_comment_meta(get_comment_ID(), 'adress', true);
+                  $comm_short_txt = mb_substr( strip_tags( $comment->comment_content ), 0, 300 )
+                  //.'...'
+                  ;
 
-            }?>
+                  echo
+                  '<li>'.
+                  '<p class="rev-name">'
+                  .$comment->comment_author.
+                  '</p>'.
+                  '<p class="rev-adres">'.$adress.'</p>'
+                  .'<p class="rev-cont">'.$comm_short_txt.'</p>'.
+                  '</li>';
+                }
+              }?>
+
             </ul>
             <a href="/?page_id=23" class="side-button">ВСЕ ОТЗЫВЫ</a>
           </div><!-- /.reviews-side -->
