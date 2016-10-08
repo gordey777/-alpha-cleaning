@@ -204,7 +204,7 @@ header {
   }
 }
 
-
+.modalRewiews,
 .modalDialog {
   //font-family: Arial, Helvetica, sans-serif;
   position: fixed;
@@ -263,6 +263,18 @@ header {
   }
 }
 
+
+.modalRewiews {
+      position: absolute;
+
+  > div {
+    height: 600px;
+    //margin: 0;
+    padding: 0;
+
+
+  }
+}
 /* SIDEBAR */
 .sidebar {
   display: inline-block;
@@ -686,7 +698,7 @@ article {
 
   border-size: border-box;
   //padding-right: 10px;
-  h1.blue-after {
+  h1 {
     font-size: 22px;
     //font-weight: 700;
     line-height: 1.4;
@@ -718,7 +730,7 @@ article {
       background: #36a3cc;
     }
   }
-  h3.blue-line {
+  h3 {
     font-size: 18px;
     font-weight: 700;
 
@@ -778,8 +790,6 @@ article {
 
       color: #167fb8;
     }
-  }
-  .leaf {
     &:before {
       position: relative;
       bottom: 2px;
@@ -794,103 +804,191 @@ article {
       padding: 0;
 
       content: '';
-
+    }
+  }
+  .leaf {
+    &:before {
       background: url(../img/leaf.png) no-repeat;
     }
   }
   .masters {
     &:before {
-      position: relative;
-      bottom: 2px;
-      left: -7px;
-
-      display: block;
-      float: left;
-
-      width: 45px;
-      height: 45px;
-      margin: 0;
-      padding: 0;
-
-      content: '';
-
       background: url(../img/masters.png) no-repeat;
     }
   }
   .gear {
     &:before {
-      position: relative;
-      bottom: 2px;
-      left: -7px;
-
-      display: block;
-      float: left;
-
-      width: 45px;
-      height: 45px;
-      margin: 0;
-      padding: 0;
-
-      content: '';
-
       background: url(../img/gear.png) no-repeat;
     }
   }
   .hand {
     &:before {
-      position: relative;
-      bottom: 2px;
-      left: -7px;
-
-      display: block;
-      float: left;
-
-      width: 45px;
-      height: 45px;
-      margin: 0;
-      padding: 0;
-
-      content: '';
-
       background: url(../img/hand.png) no-repeat;
     }
   }
   .clock {
     &:before {
-      position: relative;
-      bottom: 2px;
-      left: -7px;
-
-      display: block;
-      float: left;
-
-      width: 45px;
-      height: 45px;
-      margin: 0;
-      padding: 0;
-
-      content: '';
-
       background: url(../img/clock.png) no-repeat;
     }
   }
   .flag {
     &:before {
-      position: relative;
-      bottom: 2px;
-      left: -7px;
+      background: url(../img/flag.png) no-repeat;
+    }
+  }
+}
+.info-blue {
+  display: inline-block;
 
-      display: block;
+  margin: 0 30px 30px 0;
+  padding: 20px 20px 7px 20px;
+
+  color: #167fb8;
+  background: #ebf3f8;
+  p {
+    margin: 0 0 0 76px;
+    padding: 0;
+  }
+  &:before {
+    position: relative;
+    bottom: 7px;
+    left: 5px;
+
+    display: block;
+    float: left;
+
+    width: 55px;
+    height: 55px;
+    margin: 0;
+    padding: 0;
+
+    content: '';
+
+    background: url(../img/info.png) no-repeat;
+  }
+}
+
+table {
+  width: 670px;
+  margin-bottom: 30px;
+
+  border: none;
+  th {
+    font-weight: 400;
+
+    padding-left: 53px;
+
+    text-align: left;
+
+    color: #fff;
+    border: none;
+    background: #2e8ec1;
+    &:first-child {
+      width: 160px;
+      padding-left: 14px;
+    }
+  }
+  tr {
+    border-bottom: 1px solid #d0e3f0;
+    td {
+      font-weight: 400;
+
+      padding-left: 53px;
+
+      text-align: left;
+
+      border: none;
+      background: #fff;
+      &:first-child {
+        width: 160px;
+        padding-left: 14px;
+
+        background: #e9f2f8;
+      }
+    }
+    &:nth-child(odd) {
+      td {
+        background: #e8f1f7;
+        &:first-child {
+          background: #d5e5f1;
+        }
+      }
+    }
+    &:first-child,
+    &:last-child {
+      border: none;
+    }
+  }
+}
+
+#owl-slider {
+  display: inline-block;
+
+  width: 100%;
+  padding: 0 50px;
+  img {
+    margin-bottom: 0;
+  }
+  .owl-nav {
+    position: relative;
+    top: -75px;
+    right: 25px;
+
+    display: inline-block;
+
+    width: 650px;
+    margin: 0;
+    padding: 0;
+    .owl-next {
+      float: right;
+    }
+    .owl-prev {
       float: left;
+    }
+    .owl-next,
+    .owl-prev {
+      font-size: 20px;
 
-      width: 45px;
-      height: 45px;
       margin: 0;
       padding: 0;
 
-      content: '';
+      color: #ccc;
+      background: none;
+      i {
+        &:before {
+          font-size: 30px;
+        }
+      }
+      &:hover {
+        color: #3687bd;
+      }
+      &.disabled {
+        background: none;
+      }
+    }
+  }
+}
+.cont-but {
+  display: flex;
 
-      background: url(../img/flag.png) no-repeat;
+  width: 100%;
+  a.content-button {
+    font-size: 12px;
+    font-weight: bold;
+
+    display: inline-block;
+
+    margin: 22px auto 38px auto;
+    padding: 15px 25px;
+
+    letter-spacing: 1.3px;
+
+    color: #fff;
+    background: #329bc7;
+    &:hover {
+      text-decoration: none;
+
+      background: #2a8db8 - #222;
     }
   }
 }
