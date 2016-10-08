@@ -685,6 +685,9 @@ function filter_del_p_of_img ($cntnt) {
 
 add_filter ('the_content', 'filter_del_p_of_img');
 
+
+
+
 //REVIEWS
 //
 // убрать поле "сайт"
@@ -728,35 +731,39 @@ function add_comment_email($fields) {
 }
 add_filter('comment_form_default_fields','add_comment_email');
 
+function add_comment_adress($fields) {
 
-
-//добавление нового поля в форму добавления комментария start
-//добавление поля "Город" в форму комментария
-function wph_add_adress_field($default) {
-    $commenter = wp_get_current_commenter();
-    $default['fields']['email'] .= '
-        <p class="comment-form-author">
-        <input id="adress" placeholder="Улица, район" name="adress" size="30"
-        type="text" aria-required="true" >
-        </p>';
-    return $default;
+    $fields['adress'] = '<p class="comment-form-adres">
+    <input id="adres" name="adres" placeholder="Улица, район" type="text" size="30"' . $aria_req . $html_req  . ' />
+    </p>';
+    return $fields;
 }
+add_filter('comment_form_default_fields','add_comment_adress');
 
-//сохранение поля "Город" в комментарии
-function wph_save_adress_field($comment_id) {
-    add_comment_meta($comment_id, 'adress', $_POST['adress']);
-}
-//вывод поля "Город" рядом с именем автора
-function wph_add_adress_to_author($author) {
+
+
+
+function add_adress_to_author($author) {
     $adress = get_comment_meta(get_comment_ID(), 'adress', true);
-    if ($adress) $author .= "<span class='rew-before-adress'>, </span><span class='rew-adres'>$adress</span>";
+    if ($adress) $author .= ", <span class='rew-adres'>$adress</span>";
     return $author;
 }
-add_filter('comment_form_defaults', 'wph_add_adress_field');
-//add_filter('preprocess_comment', 'wph_verify_adress_field');
-add_action('comment_post', 'wph_save_adress_field');
-add_filter('get_comment_author_link', 'wph_add_adress_to_author');
-//добавление нового поля в форму добавления комментария end
+
+add_filter('get_comment_author_link', 'add_adress_to_author');
+//
+/*function add_comment_meta_values($comment_id) {
+
+    if(isset($_POST['adres'])) {
+        $age = wp_filter_nohtml_kses($_POST['adres']);
+        add_comment_meta($comment_id, 'adres', $age, false);
+    }
+
+}
+add_action ('comment_post', 'add_comment_meta_values', 1);*/
+
+//вывод поля адрес
+/*<?php echo "Comment authors age: ".get_comment_meta( $comment->comment_ID, 'age', true ); ?>*/
+
 
 
 //поменять порядок полей
@@ -766,7 +773,7 @@ function kama_reorder_comment_fields( $fields ){
 
   $new_fields = array(); // сюда соберем поля в новом порядке
 
-  $myorder = array('author','adress','email','url','comment'); // нужный порядок
+  $myorder = array('author','email','adress','url','comment'); // нужный порядок
 
   foreach( $myorder as $key ){
     $new_fields[ $key ] = $fields[ $key ];
@@ -780,5 +787,7 @@ function kama_reorder_comment_fields( $fields ){
 
   return $new_fields;
 }
+
+
 
 ?>

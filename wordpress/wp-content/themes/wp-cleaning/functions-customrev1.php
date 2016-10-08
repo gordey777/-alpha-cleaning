@@ -685,48 +685,6 @@ function filter_del_p_of_img ($cntnt) {
 
 add_filter ('the_content', 'filter_del_p_of_img');
 
-//REVIEWS
-//
-// убрать поле "сайт"
-function remove_comment_author($fields) {
-    unset($fields['author']);
-    return $fields;
-}
-add_filter('comment_form_default_fields','remove_comment_author');
-
-function remove_comment_email($fields) {
-    unset($fields['email']);
-    return $fields;
-}
-add_filter('comment_form_default_fields','remove_comment_email');
-
-function remove_comment_url($fields) {
-    unset($fields['url']);
-    return $fields;
-}
-add_filter('comment_form_default_fields','remove_comment_url');
-
-
-
-// добавить поля
-function add_comment_author($fields) {
-
-    $fields['author'] = '<p class="comment-form-author">
-    <input id="author" placeholder="Имя *" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . $aria_req . $html_req . ' />
-    </p>';
-    return $fields;
-}
-add_filter('comment_form_default_fields','add_comment_author');
-
-function add_comment_email($fields) {
-
-    $fields['email'] = '<p class="comment-form-email">
-    <input id="email" placeholder="e-mail" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" aria-describedby="email-notes"' . $aria_req . $html_req  . ' />
-
-    </p>';
-    return $fields;
-}
-add_filter('comment_form_default_fields','add_comment_email');
 
 
 
@@ -766,7 +724,7 @@ function kama_reorder_comment_fields( $fields ){
 
   $new_fields = array(); // сюда соберем поля в новом порядке
 
-  $myorder = array('author','adress','email','url','comment'); // нужный порядок
+  $myorder = array('author','email','adress','url','comment'); // нужный порядок
 
   foreach( $myorder as $key ){
     $new_fields[ $key ] = $fields[ $key ];
@@ -780,5 +738,6 @@ function kama_reorder_comment_fields( $fields ){
 
   return $new_fields;
 }
-
 ?>
+
+

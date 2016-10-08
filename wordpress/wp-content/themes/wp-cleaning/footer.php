@@ -15,7 +15,7 @@
   <li><a href="#">Химчистка мягкой мебели</a></li>
 </ul>
     </nav>--><!-- /nav -->
-  </div><!-- /.header-nav-menu -->
+  </div><!-- /.footer-nav-menu -->
   <div class="footer-content">
 
     <div class="footer-logo">
@@ -43,25 +43,37 @@
   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
 <!--   <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/owl-sliders.js"></script> -->
   <script >
-      $(document).ready(function() {
+  $(document).ready(function() {
 
     $("#owl-header_slider").owlCarousel({
         items: 1,
         loop: true,
-        //margin: "auto",
         smartSpeed:500,
         autoplay: true,
-        //autoWidth: true,
         autoplayTimeout: 3000,
         autoplayHoverPause: true,
         dots: false,
+        mouseDrag: false,
         animateOut: 'fadeOut',
-        //animateIn: 'fadeIn',
-
     });
 
+  });
 
+  $(document).ready(function() {
 
+    $("#owl-slider").owlCarousel({
+        nav:true,
+        items: 3,
+        loop: false,
+        margin: 30,
+        smartSpeed:500,
+        autoplay: false,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        dots: false,
+        navText: ['<i class="fa fa-angle-left icon-large" aria-hidden="true"></i>','<i class="fa fa-angle-right icon-large" aria-hidden="true"></i>'],
+        //mouseDrag: false,
+    });
 
   });
 
