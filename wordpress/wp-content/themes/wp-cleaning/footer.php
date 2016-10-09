@@ -3,6 +3,8 @@
 
 </div><!-- /wrapper -->
 
+<?php include 'reviews-form.php'; ?>
+
 <footer role="contentinfo">
 
   <div class="footer-nav-menu">
@@ -34,6 +36,8 @@
     </div>
   </div><!-- /.footer-content -->
 </footer><!-- /footer -->
+
+
 
   <?php wp_footer(); ?>
 

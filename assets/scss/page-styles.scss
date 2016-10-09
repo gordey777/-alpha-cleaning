@@ -351,12 +351,19 @@ header {
 
 .modalRewiews {
   position: absolute;
+  top: -20px;
+
+  width: 100%;
+  height: 3000px;
   > div {
     height: 600px;
-    //margin: 0;
-    padding: 0;
+    margin: 80px auto;
+    padding: 30px 20px;
   }
 }
+
+
+
 /* SIDEBAR */
 .sidebar {
   display: inline-block;
