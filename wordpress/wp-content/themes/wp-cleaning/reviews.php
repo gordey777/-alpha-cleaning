@@ -1,6 +1,6 @@
 <div class="comments">
 
-  <a href="#modalRew">ДОБАВИТЬ ОТЗЫВ</a>
+  <a id="add-rev" href="#modalRew">ДОБАВИТЬ ОТЗЫВ</a>
 
   <?php if (post_password_required()) : ?>
     <p>
@@ -43,7 +43,7 @@
             'name_submit'          => 'submit',
             'title_reply'          => __( 'Оставте отзыв' ),
             'title_reply_to'       => __( 'Leave a Reply to %s' ),
-            'title_reply_before'   => '<h6 id="reply-title" class="comment-reply-title">',
+            'title_reply_before'   => '<h6 id="reply-title" class="modal-title">',
             'title_reply_after'    => '</h6>',
             'cancel_reply_before'  => ' <small>',
             'cancel_reply_after'   => '</small>',

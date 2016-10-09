@@ -16,9 +16,9 @@
           </div><!-- /.contacts-side -->
 
           <div class="reviews-side">
-            <h5 class="blue-after">отзывы о нас</h5>
-            <ul>
 
+            <ul>
+              <h5 class="blue-after">отзывы о нас</h5>
               <?php
                 $args = array(
                 'number' => 3,
@@ -33,17 +33,20 @@
                 foreach( $comments as $comment ){
 
                   $adress = get_comment_meta(get_comment_ID(), 'adress', true);
-                  $comm_short_txt = mb_substr( strip_tags( $comment->comment_content ), 0, 300 )
-                  //.'...'
-                  ;
+
+
+                  $comm_short_txt = mb_substr( strip_tags( $comment->comment_content ), 0, 250 );
+
+                  if (mb_strlen($comment->comment_content) > 250) $after='...';
+                  else $after = '';
 
                   echo
                   '<li>'.
                   '<p class="rev-name">'
                   .$comment->comment_author.
                   '</p>'.
-                  '<p class="rev-adres">'.$adress.'</p>'
-                  .'<p class="rev-cont">'.$comm_short_txt.'</p>'.
+                  '<p class="rev-adres">'.$adress.'.</p>'
+                  .'<p class="rev-cont">'.$comm_short_txt.$after.'</p>'.
                   '</li>';
                 }
               }?>

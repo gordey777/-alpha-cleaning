@@ -749,7 +749,7 @@ function wph_save_adress_field($comment_id) {
 //вывод поля "Город" рядом с именем автора
 function wph_add_adress_to_author($author) {
     $adress = get_comment_meta(get_comment_ID(), 'adress', true);
-    if ($adress) $author .= "<span class='rew-before-adress'>, </span><span class='rew-adres'>$adress</span>";
+    if ($adress) $author .= ", <span class='rew-adres'>$adress</span>";
     return $author;
 }
 add_filter('comment_form_defaults', 'wph_add_adress_field');

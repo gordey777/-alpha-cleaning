@@ -73,10 +73,9 @@
 
             <div id="openModal" class="modalDialog">
               <div>
+              <h2 class="modal-title">онлайн заявка</h2>
                 <a href="#close" title="Закрыть" id="mod-close" class="close"></a>
-                <h2>Модальное окно</h2>
-                <p>Пример простого модального окна, которое может быть создано с использованием CSS3.</p>
-                <p>Его можно использовать в широком диапазоне, начиная от вывода сообщений и заканчивая формой регистрации.</p>
+                <?php echo do_shortcode('[contact-form-7 id="4" title="Форма заказа"]'); ?>
               </div>
             </div>
           </div>
