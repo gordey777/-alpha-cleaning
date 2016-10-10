@@ -882,7 +882,7 @@ article {
       background: #36a3cc;
     }
   }
-  h3 {
+  h2 {
     font-size: 18px;
     font-weight: 700;
 
@@ -1037,6 +1037,8 @@ article {
     }
   }
 }
+
+blockquote,
 .info-blue {
   display: inline-block;
 
@@ -1133,15 +1135,17 @@ table {
   padding: 0 50px 0 25px;
   img {
     margin-bottom: 0;
+    max-height: 120px;
   }
   .owl-nav {
     position: relative;
-    top: -75px;
+    top: -90px;
     right: 25px;
 
     display: inline-block;
 
     width: 675px;
+    height: 0;
     margin: 0;
     padding: 0;
     .owl-next {

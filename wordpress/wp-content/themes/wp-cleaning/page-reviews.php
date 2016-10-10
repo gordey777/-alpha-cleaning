@@ -10,7 +10,7 @@
 
       <?php the_content(); ?>
       <?php edit_post_link(); ?>
-
+<div class="cont-but"><a href="#openModal" class="content-button">Заказать химчистку от 300р. за кв. метр</a></div>
     </article>
 
 <?php get_footer(); ?>

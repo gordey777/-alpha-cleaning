@@ -40,19 +40,21 @@
 
                 <?php while ( have_rows('header_slider', 71 ) ) : the_row(); ?>
                     <div class="item">
-                      <a href="<?php the_sub_field('link'); ?>">
+
                         <?php $image = get_sub_field('image');
                         if( !empty($image) ): ?>
-                          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                          <a href="<?php echo $image['url']; ?>" rel="lightbox">
+                            <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                          </a>
                         <?php endif; ?>
-                      </a>
+
                     </div>
                   <?php  endwhile; ?>
 
-              </div><!-- #owl-product-slider -->
+              </div><!-- #owl-header_slider -->
               <?php else : ?>
                 <?php endif; ?>
-          <!-- <img src="<?php echo get_template_directory_uri(); ?>/img/head-slide.jpg" alt=""> -->
+
         </div>
         <div class="header-nav-menu col-md-12">
 <nav class="nav__header" role="navigation">
